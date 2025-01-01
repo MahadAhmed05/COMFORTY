@@ -4,10 +4,20 @@ import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 
+// interface product {
+//   title: string;
+//   price: number;
+//   image: any
+// }
 interface product {
   title: string;
   price: number;
-  image: any
+  image: {
+    asset: {
+      _ref: string;
+      _type: string;
+    };
+  };
 }
 
 const productFetch = "*[_type == 'Product']{title,price,image}";
@@ -23,9 +33,6 @@ async function page() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {response.map((product) => (
             <div
-
-
-            
               key={product.title} // Add a unique key here
               className="group relative w-[300px] h-[400px] bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
