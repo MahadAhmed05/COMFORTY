@@ -9,7 +9,6 @@ import Feature5 from "../Images/TopCategory1.png";
 import Feature6 from "../Images/Image (1).png";
 import Feature7 from "../Images/Feature7.png";
 import Feature8 from "../Images/FeatureProduct1.png";
-import Cart from "../Images/cart-logo.png";
 
 const ProductsPage = () => {
   return (
